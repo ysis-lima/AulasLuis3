@@ -122,3 +122,39 @@ INSERT INTO pessoas (nome,
  values
  ('Marie lucy','1977-08-08','F','65.9', '1.77', DEFAULT); 
  
+ SELECT*FROM pessoas;
+ DESCRIBE pessoas;
+ 
+ALTER TABLE pessoas
+ADD COLUMN profissao VARCHAR(10);
+
+ALTER TABLE pessoas
+drop column profissao;
+
+ALTER TABLE pessoas
+add column profissao VARCHAR (10) AFTER nome;
+
+ALTER TABLE pessoas
+MODIFY COLUMN  profissao varchar(30) NOT NULL DEFAULT '';
+
+ALTER TABLE pessoas
+CHANGE COLUMN profissao prof varchar (30);
+
+ALTER TABLE pessoas
+RENAME TO pessoa;
+
+CREATE TABLE IF NOT EXISTS cursos (
+nome varchar (30) NOT NULL UNIQUE,
+descricao text,
+carga int UNSIGNED,
+totalaulas int UNSIGNED,
+ano year DEFAULT '2016'
+) DEFAULT CHARSET utf8mb4;
+
+ALTER TABLE cursos
+add column idcurso int first;
+
+ALTER TABLE cursos
+ADD primary key (idcurso);
+
+DESCRIBE cursos;
